@@ -2,12 +2,10 @@
   "name": "angular2-contextmenu",
   "version": "0.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-    "lite": "lite-server",
-    "postinstall": "typings install",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "typings": "typings"
+    "start": "webpack-dev-server --inline --progress --port 8181",
+    "test": "karma start",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "postinstall": "typings install"
   },
   "licenses": [
     {
@@ -34,6 +32,9 @@
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
+    "@types/core-js": "0.9.34",
+    "@types/jasmine": "2.5.35",
+    "@types/node": "4.0.30",
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^2.2.4",
     "concurrently": "^3.0.0",
