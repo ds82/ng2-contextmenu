@@ -1,6 +1,11 @@
-import { Component, Input, AfterViewInit, ElementRef, Renderer } from '@angular/core';
-import { ContextmenuComponent } from './contextmenu.interface';
-import { ContextmenuService } from './contextmenu.service';
+import {
+  Component,
+  Input,
+  ContentChild,
+  AfterViewInit,
+  ElementRef,
+  Renderer
+} from '@angular/core';
 
 @Component({
   selector: 'contextmenu',
@@ -11,19 +16,14 @@ import { ContextmenuService } from './contextmenu.service';
     '[class.show]': 'isVisible'
   }
 })
-export class ContextmenuComponentImpl implements ContextmenuComponent, AfterViewInit {
+export class ContextmenuComponent {
 
-  private service: ContextmenuService = null;
-
-  isVisible: boolean = false;
   @Input('id') id: string;
 
-  constructor(private element: ElementRef, private renderer: Renderer) {
-    this.service = ContextmenuService.getInstance();
-  }
+  context: any = {};
+  isVisible: boolean = false;
 
-  ngAfterViewInit() {
-    this.service.register(this);
+  constructor(private element: ElementRef, private renderer: Renderer) {
   }
 
   show(x: number, y: number) {
@@ -35,5 +35,10 @@ export class ContextmenuComponentImpl implements ContextmenuComponent, AfterView
 
   hide() {
     this.isVisible = false;
+  }
+
+  setContext(context: any) {
+    console.log(`setContext`, context);
+    this.context = context;
   }
 }
