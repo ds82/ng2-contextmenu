@@ -1,11 +1,12 @@
 {
-  "name": "angular2-contextmenu",
+  "name": "ng2-contextmenu",
   "version": "0.0.0",
+  "main": "index.js",
+  "types": "dist/contextmenu.module.d.ts",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8181",
     "test": "karma start",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install"
+    "build": "tsc"
   },
   "licenses": [
     {

@@ -1,8 +1,0 @@
-:host(.contextmenu-container) {
-  display: none;
-  position: absolute;
-}
-
-:host(.contextmenu-container.show) {
-  display: block;
-}
