@@ -41,7 +41,6 @@ export class ContextmenuComponent {
     this.renderer.setElementStyle(this.element.nativeElement, 'left', `${x}px`);
     this.renderer.setElementStyle(this.element.nativeElement, 'top', `${y}px`);
     this.isVisible = true;
-    console.log(`show ${this.id}: ${x},${y}`);
   }
 
   hide() {
@@ -49,7 +48,6 @@ export class ContextmenuComponent {
   }
 
   setContext(context: any) {
-    console.log(`setContext`, context);
     this.context = context;
   }
 }
