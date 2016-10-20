@@ -19,12 +19,35 @@ const name = pkg.name;
 const baseURL = __dirname;
 const targetFolder = path.resolve(__dirname, './bundles');
 
+const systemjsConfig = {
+  normalize: false,
+  minify: false,
+  mangle: false,
+  runtime: false,
+  globalDefs: {
+    DEBUG: false,
+    ENV: 'production'
+  }
+};
+
 const config = {
   baseURL: baseURL,
   defaultJSExtensions: true,
   transpiler: 'typescript',
   typescriptOptions: {
-    module: 'cjs'
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "listFiles": false,
+    "noLib": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "target": "es5"
   },
   map: {
     typescript: path.resolve('node_modules/typescript/lib/typescript.js'),
@@ -57,6 +80,7 @@ build();
 function build() {
   return builder.buildStatic(
     path.join(config.baseURL, 'src/contextmenu/contextmenu.module.ts'),
-    path.join(targetFolder, 'contextmenu.cjs.js')
+    path.join(targetFolder, 'contextmenu.umd.js'),
+    systemjsConfig
   );
 }
