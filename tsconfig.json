@@ -1,17 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "jsx": "react",
+    "listFiles": false,
+    "noLib": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
     "removeComments": false,
-    "noImplicitAny": false,
-    "outDir": "./bundles",
-    "declaration": true
+    "sourceMap": false,
+    "target": "es5",
+    "outDir": "./bundles"
   },
   "include": [
     "./src/**/*.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "genDir": "compiled"
+  }
 }
