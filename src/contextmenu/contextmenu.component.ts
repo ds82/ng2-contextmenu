@@ -50,4 +50,25 @@ export class ContextmenuComponent {
   setContext(context: any) {
     this.context = context;
   }
+
+  get(path: string|string[]) {
+    return this.baseGet(this.context, path) || '';
+  }
+
+  // This function is borrowed from lodash
+  // https://github.com/lodash/lodash/blob/master/lodash.js
+  // Copyright JS Foundation and other contributors <https://js.foundation/>
+  private baseGet(object: any, path: string|string[]) {
+    path = Array.isArray(path) ? path : path.split('.');
+
+    let index = 0;
+    let length = path.length;
+
+    while (object != null && index < length) {
+      object = object[(path[index++])];
+    }
+    return (index && index === length) ? object : undefined;
+  }
+
+
 }
