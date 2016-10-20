@@ -40,9 +40,9 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['contextmenu']
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: ['contextmenu']
+    // }),
 
     // new HtmlWebpackPlugin({
     //   template: 'src/index.html'

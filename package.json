@@ -5,10 +5,9 @@
   "types": "bundles/contextmenu.module.d.ts",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8181",
-    "disabled.test": "karma start",
-    "test": "npm run lint",
+    "test": "karma start config/karma.conf.js",
     "clean": "rimraf bundles",
-    "build": "npm-run-all clean -p build:ts build:system",
+    "build": "npm-run-all -s clean -p lint test -p build:ts build:system",
     "build:ts": "tsc",
     "build:system": "./build.js",
     "lint": "tslint src/**/*.ts",
