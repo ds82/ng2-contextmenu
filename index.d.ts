@@ -1,1 +1,1 @@
-export {ContextmenuModule} from './dist/contextmenu.module';
+export {ContextmenuModule} from './bundles/contextmenu.module';
