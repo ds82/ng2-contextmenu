@@ -75,4 +75,9 @@ export class ContextmenuComponent {
   public onClick(): void {
     this.hide();
   }
+
+  @HostListener('document:scroll', [])
+  public onScroll(): void {
+    this.hide();
+  };
 }
