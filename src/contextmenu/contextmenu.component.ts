@@ -15,7 +15,7 @@ import {
   styles: [
     `:host(.contextmenu-container) {
         display: none;
-        position: absolute;
+        position: fixed;
     }`,
     `:host(.contextmenu-container.show) {
         display: block;
