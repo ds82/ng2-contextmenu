@@ -2,7 +2,8 @@ import {
   Component,
   Input,
   ElementRef,
-  Renderer
+  Renderer,
+  HostListener
 } from '@angular/core';
 
 @Component({
@@ -70,5 +71,8 @@ export class ContextmenuComponent {
     return (index && index === length) ? object : undefined;
   }
 
-
+  @HostListener('document:click', [])
+  public onClick(): void {
+    this.hide();
+  }
 }
