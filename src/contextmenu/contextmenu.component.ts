@@ -17,6 +17,7 @@ import {
     `:host(.contextmenu-container) {
         display: none;
         position: fixed;
+        z-index: 1300;
     }`,
     `:host(.contextmenu-container.show) {
         display: block;
