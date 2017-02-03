@@ -1,6 +1,7 @@
 {
   "name": "ng2-contextmenu",
-  "main": "index.js",
+  "main": "./bundles/index.js",
+  "module": "./bundles/index.js",
   "version": "0.0.0",
   "types": "bundles/contextmenu.module.d.ts",
   "scripts": {

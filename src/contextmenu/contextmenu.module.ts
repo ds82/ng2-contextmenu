@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 
 import { ContextmenuComponent } from './contextmenu.component';
@@ -22,4 +22,14 @@ import { ContextmenuDirective } from './contextmenu.directive';
     ContextmenuComponent
   ]
 })
-export class ContextmenuModule { }
+export class ContextmenuModule {
+  constructor() {}
+
+  static forChild(): ModuleWithProviders {
+    return {
+      ngModule: ContextmenuModule
+    };
+  }
+
+
+}
