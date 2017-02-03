@@ -2,7 +2,7 @@
   "name": "ng2-contextmenu",
   "main": "./bundles/index.js",
   "module": "./bundles/index.js",
-  "version": "0.0.0",
+  "version": "1.3.2",
   "types": "bundles/contextmenu.module.d.ts",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8181",
