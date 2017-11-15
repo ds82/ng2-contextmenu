@@ -16,7 +16,7 @@ import {
   styles: [
     `:host(.contextmenu-container) {
         display: none;
-        position: fixed;
+        position: absolute;
         z-index: 1300;
     }`,
     `:host(.contextmenu-container.show) {
@@ -40,9 +40,20 @@ export class ContextmenuComponent {
   }
 
   show(x: number, y: number) {
-    this.renderer.setElementStyle(this.element.nativeElement, 'left', `${x}px`);
-    this.renderer.setElementStyle(this.element.nativeElement, 'top', `${y}px`);
     this.isVisible = true;
+
+    // timeout required that menu is visible, otherwise offsetParent is always null
+    setTimeout(() => {
+      let offsetParent = this.element.nativeElement.offsetParent;
+      if (offsetParent && offsetParent !== document.body) {
+        // compute position relative to offset parent
+        let bb = offsetParent.getBoundingClientRect();
+        x -= bb.left;
+        y -= bb.top;
+      }
+      this.renderer.setElementStyle(this.element.nativeElement, 'left', x + 'px');
+      this.renderer.setElementStyle(this.element.nativeElement, 'top', y + 'px');
+    });
   }
 
   hide() {
