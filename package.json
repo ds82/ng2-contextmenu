@@ -2,7 +2,7 @@
   "name": "ng2-contextmenu",
   "main": "./bundles/index.js",
   "module": "./bundles/index.js",
-  "version": "0.0.0-dev",
+  "version": "0.0.0-development",
   "types": "bundles/contextmenu.module.d.ts",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8181",
@@ -65,7 +65,7 @@
     "reflect-metadata": "^0.1.8",
     "rimraf": "^2.5.2",
     "rxjs": "5.5.2",
-    "semantic-release": "^4.3.5",
+    "semantic-release": "^8.2.0",
     "style-loader": "^0.13.1",
     "systemjs-builder": "0.15.32",
     "tslint": "3.15.1",

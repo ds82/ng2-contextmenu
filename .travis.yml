@@ -1,25 +1,18 @@
-sudo: false
 language: node_js
 cache:
   directories:
-    - node_modules
+    - ~/.npm
 notifications:
   email: false
 node_js:
-  - '4'
-  - '6'
+  - '9'
   - '8'
-before_install:
-  - npm i -g npm@latest
-before_script:
-  - npm prune
+  - '6'
+  - '4'
 script:
   - npm run test
   - npm run build
 after_success:
-  - 'curl -Lo travis_after_all.py https://git.io/travis_after_all'
-  - python travis_after_all.py
-  - export $(cat .to_export_back) &> /dev/null
   - npm run semantic-release
 branches:
   except:
