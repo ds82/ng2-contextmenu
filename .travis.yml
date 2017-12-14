@@ -8,6 +8,7 @@ notifications:
 node_js:
   - '4'
   - '6'
+  - '8'
 before_install:
   - npm i -g npm@latest
 before_script:
