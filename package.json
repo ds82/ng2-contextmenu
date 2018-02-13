@@ -21,7 +21,7 @@
     }
   ],
   "dependencies": {
-    "angular-in-memory-web-api": "~0.1.5",
+    "angular-in-memory-web-api": "0.5.3",
     "bootstrap": "^3.3.7"
   },
   "peerDependencies": {
